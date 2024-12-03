@@ -24,22 +24,13 @@ use Throwable;
  */
 class Error extends BaseType implements JsonSerializable
 {
-    /** @var Throwable */
-    private $throwable;
+    private Throwable $throwable;
 
-    /**
-     * @param Throwable $throwable
-     */
     public function __construct(Throwable $throwable)
     {
         $this->throwable = $throwable;
     }
 
-    /**
-     * @param Throwable $throwable
-     *
-     * @return array<string, mixed>
-     */
     public static function serialize(Throwable $throwable): array
     {
         return [
